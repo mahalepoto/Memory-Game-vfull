@@ -87,6 +87,8 @@
 	 		currentCard.removeEventListener ('click', cardClick); 
 	 		console.log (currentCard);
 
+	 		
+
 	 		// updating move counts
 	 		let countMoves = document.getElementById ('moves');
 
@@ -107,24 +109,22 @@
 	 		if ( moveCount ===1) {
 	 			startTime ();
 	 		}
+	 			
+	 			currentCard.classList.add('open', 'show');
 
-	 		currentCard.classList.add('open', 'show');
 
 	 			if (previouseCard) {
 
-	 				let counter = 0;
-	 				while (counter !==2){
-	 			
 	 				// matching cards
 	 				if (currentCard.innerHTML === previouseCard.innerHTML) {
 	 					currentCard.classList.add('match');
 	 					previouseCard.classList.add('match');
 	 					matchedCards.push(currentCard,previouseCard);
-	 				
+	 		
 	 					// console.log ('match'); this line here for just test purpose
 	 					previouseCard = null ;
-
-	 					// check if won 
+	 					
+	 					// check if won
 	 					if (cards.length === matchedCards.length) {
 	 					
 	 						// stopping stopwatch 
@@ -134,25 +134,25 @@
 	 						popup ();
 							
 	 					}
-	 			
-	 				}
-
 	 				} else {
 	 					// when cards are not matched
 	 					setTimeout (function(){
+
 	 						currentCard.classList.remove ('open', 'show');	
 	 						previouseCard.classList.remove ('open', 'show');
 	 						currentCard.addEventListener ('click', cardClick);
 	 						previouseCard.addEventListener ('click', cardClick);
 	 						previouseCard = null ;
+	 						
 	 					}, 500);
 	 				
 	 				}
+	 			
 
 	 			} else {
 	 					previouseCard = currentCard ;	
 	 					openedCards.push(this);	
-	 				}		
+	 				}					
 	 	} 
 	 		
 	 		// event listener function 
