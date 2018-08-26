@@ -103,7 +103,7 @@
 	 		console.log(countMoves);
 
 	 		// star ranking;
-	 		if ( moveCount === 2) {
+	 		if ( moveCount === 20) {
 	 			let removeStar = document.getElementById('star3');
 				removeStar.style.display = 'none';
 	 		} else if (moveCount ===30) {
