@@ -46,7 +46,7 @@
 
 		function popup() {
 	    				modal.style.display = "flex";
-	    				document.getElementById('p1').innerHTML = 'Your star ratting is '+removeStars+ 'moves played '+ moveCount+'completed game in '+seconds+' seconds.';
+	    				document.getElementById('p1').innerHTML = 'You got '+removeStars+ ' moves played '+ moveCount+' completed game in '+seconds+' seconds.';
 		}
 
 		// Closing popup by clicking x
@@ -106,10 +106,15 @@
 	 		if ( moveCount === 20) {
 	 			let removeStar = document.getElementById('star3');
 				removeStar.style.display = 'none';
+				let star2 = document.getElementById('star2');
+				star2.style.display = 'inline-block';
+				let star1 = document.getElementById('star1');
+				star1.style.display = 'inline-block';
 	 		} else if (moveCount ===30) {
 	 			let removeStar2 = document.getElementById ('star2');
 	 			removeStar2.style.display = 'none';
 	 			}
+
 	 		removeStars = document.querySelector('.stars').innerHTML;		
 
 	 		// start  stopwatch at the first click.
