@@ -1,4 +1,6 @@
-// Shuffle function from http://stackoverflow.com/a/2450976
+	//Whole JS code in 'Strict Mode' syntax.
+	'use strict';
+	// Shuffle function from http://stackoverflow.com/a/2450976
 	function shuffle(array) {
 	    let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -15,29 +17,29 @@
 
 
 	window.onload = function () {
-		let openedCards	 = 	[];
-			matchedCards = 	[];
-			currentCard  = 	[];
-			previouseCard= 0;
-			moveCount = 0;
-			restart = document.getElementsByClassName ('restart');
-			modal = document.getElementById('myModal');
-			span = document.getElementsByClassName('close')[0];
-			removeStars = 0;
+		let openedCards = [];
+		let	matchedCards = [];
+		let	currentCard = [];
+		let	previouseCard = 0;
+		let	moveCount = 0;
+		let	restart = document.getElementsByClassName ('restart');
+		let	modal = document.getElementById('myModal');
+		let	span = document.getElementsByClassName('close')[0];
+		let	removeStars = 0;
 
-			// console.log (restart); just to see if restart works
+			// console.log (restart); CHECK
 			restart[0].addEventListener ('click', function (){
 				location.reload();
 
 			})
-		// console.log("It's loaded!") to check if this works
+		// console.log("It's loaded!") CHECK
 		const cards = ['fa-diamond','fa-diamond', 'fa-paper-plane-o','fa-paper-plane-o', 'fa-anchor', 'fa-anchor', 'fa-bolt', 'fa-bolt', 'fa-cube', 'fa-cube', 'fa-leaf', 'fa-leaf', 'fa-bicycle', 'fa-bicycle',
 		 'fa-bomb','fa-bomb' ]; 
 		let shuffleCards = shuffle (cards);
-		// console.log (shuffleCards); to check if this works
+		// console.log (shuffleCards); CHECK
 		let cardElements = document.getElementsByClassName('symbols');
-		// console.log (cardElements); to check if this works
-		for (i=0; i < cardElements.length; i++ ) {
+		// console.log (cardElements); CHECK
+		for (let i=0; i < cardElements.length; i++ ) {
 			cardElements[i].className = shuffleCards[i]+ ' fa symbols';
 		
 		}
@@ -63,8 +65,8 @@
 
 		// Stopwatch initialisation
 		let stopWatch = document.getElementById ('timer');
-			time = 0;
-			seconds=0
+		let	time = 0;
+		let	seconds=0
 		
 		// start time
 		function startTime () {
@@ -86,7 +88,7 @@
 		// Click Event
 		function cardClick () {
 			if (!clickFlag) {
-				//alert ('Please wait you are clicking too fast');
+				//alert ('Please wait you are clicking too fast'); CHECK
 				return;
 			}
 	 		currentCard = this;
@@ -134,7 +136,7 @@
 	 					previouseCard.classList.add('match');
 	 					matchedCards.push(currentCard,previouseCard);
 	 		
-	 					// console.log ('match'); this line here for just test purpose
+	 					// console.log ('match'); CHECK
 	 					previouseCard = null ;
 	 					
 	 					// check if won
@@ -172,7 +174,7 @@
 	 	} 
 	 		
 	 		// event listener function 
-	 	for (i=0; i < displayCards.length; i++) {
+	 	for (let i=0; i < displayCards.length; i++) {
 			displayCards[i].addEventListener('click', cardClick);
 
 		}

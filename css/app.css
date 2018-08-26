@@ -160,3 +160,7 @@ html {
     text-decoration: none;
     cursor: pointer;
     }
+
+    #foot {
+        text-align: center;
+    }
